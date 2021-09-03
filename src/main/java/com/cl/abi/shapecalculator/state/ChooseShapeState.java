@@ -1,7 +1,6 @@
 package com.cl.abi.shapecalculator.state;
 
 import com.cl.abi.shapecalculator.module.Calculator;
-import com.cl.abi.shapecalculator.module.Flow;
 
 public class ChooseShapeState implements State {
 
@@ -13,7 +12,7 @@ public class ChooseShapeState implements State {
 
     @Override
     public String print() {
-        return Flow.CHOOSE_SHAPE.getMessage();
+        return "Shape: (C)ircle or (R)ectangle?";
     }
 
     @Override

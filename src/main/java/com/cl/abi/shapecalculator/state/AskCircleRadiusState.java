@@ -1,7 +1,6 @@
 package com.cl.abi.shapecalculator.state;
 
 import com.cl.abi.shapecalculator.module.Calculator;
-import com.cl.abi.shapecalculator.module.Flow;
 import com.cl.abi.shapecalculator.shape.Circle;
 
 public class AskCircleRadiusState implements State {
@@ -13,7 +12,7 @@ public class AskCircleRadiusState implements State {
 
     @Override
     public String print() {
-        return Flow.ASK_CIRCLE_RADIUS.getMessage();
+        return "Circle radius length?";
     }
 
     @Override

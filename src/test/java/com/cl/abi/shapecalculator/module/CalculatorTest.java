@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculatorTest {
     @Test
     void when_choose_shape() {
-        assertEquals(Flow.CHOOSE_SHAPE.getMessage(), new Calculator().print());
+        assertEquals("Shape: (C)ircle or (R)ectangle?", new Calculator().print());
     }
 
     @Test
@@ -17,7 +17,7 @@ class CalculatorTest {
 
         given_choose_rectangle(calculator);
 
-        then_next_step_should_be(calculator, Flow.ASK_RECTANGLE_SIDE_A);
+        then_message_should_be(calculator, "Rectangle side A length?");
     }
 
     @Test
@@ -26,7 +26,7 @@ class CalculatorTest {
 
         given_choose_circle(calculator);
 
-        then_next_step_should_be(calculator, Flow.ASK_CIRCLE_RADIUS);
+        then_message_should_be(calculator, "Circle radius length?");
     }
 
     @Test
@@ -71,7 +71,7 @@ class CalculatorTest {
         given_choose_rectangle(calculator);
         given_rectangle_side(calculator, "5");
 
-        then_next_step_should_be(calculator, Flow.ASK_RECTANGLE_SIDE_B);
+        then_message_should_be(calculator, "Rectangle side B length?");
     }
 
     @Test
@@ -133,8 +133,8 @@ class CalculatorTest {
         calculator.input(answer);
     }
 
-    private void then_next_step_should_be(Calculator calculator, Flow nextStep) {
-        assertEquals(nextStep.getMessage(), calculator.print());
+    private void then_message_should_be(Calculator calculator, String message) {
+        assertEquals(message, calculator.print());
     }
 
     private void when_input_would_fail(Executable executable) {

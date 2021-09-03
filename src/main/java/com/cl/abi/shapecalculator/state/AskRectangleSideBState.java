@@ -1,7 +1,6 @@
 package com.cl.abi.shapecalculator.state;
 
 import com.cl.abi.shapecalculator.module.Calculator;
-import com.cl.abi.shapecalculator.module.Flow;
 import com.cl.abi.shapecalculator.shape.Rectangle;
 
 public class AskRectangleSideBState implements State {
@@ -12,7 +11,7 @@ public class AskRectangleSideBState implements State {
     }
 
     public String print() {
-        return Flow.ASK_RECTANGLE_SIDE_B.getMessage();
+        return "Rectangle side B length?";
     }
 
     public void input(String answer) {

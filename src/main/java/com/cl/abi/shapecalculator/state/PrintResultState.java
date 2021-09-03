@@ -1,7 +1,6 @@
 package com.cl.abi.shapecalculator.state;
 
 import com.cl.abi.shapecalculator.module.Calculator;
-import com.cl.abi.shapecalculator.module.Flow;
 import com.cl.abi.shapecalculator.shape.ShapeCalculator;
 
 public class PrintResultState implements State {
@@ -13,7 +12,7 @@ public class PrintResultState implements State {
 
     public String print() {
         ShapeCalculator shapeCalculator = calculator.getCalculator();
-        return String.format(Flow.PRINT_RESULT.getMessage(), shapeCalculator.getArea(), shapeCalculator.getCircumference());
+        return String.format("Area=%d, Circumference=%d", shapeCalculator.getArea(), shapeCalculator.getCircumference());
     }
 
     public void input(String answer) throws Exception {
