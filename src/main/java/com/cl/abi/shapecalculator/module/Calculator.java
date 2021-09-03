@@ -5,15 +5,13 @@ import com.cl.abi.shapecalculator.state.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
 public class Calculator {
-    @Setter
     private State currentState = new ChooseShapeState(this);
 
-    @Setter
     @Getter
     private ShapeCalculator calculator;
 
-    @Setter
     @Getter
     private int a;
 
